@@ -1,0 +1,34 @@
+services:
+    helloworld:
+        container_name: helloworld
+        image: crccheck/hello-world
+        expose:
+            - 8000
+
+    nginx:
+        container_name: nginx
+        restart: unless-stopped
+        image: nginx
+        ports:
+            - 80:80
+            - 443:443
+        volumes:
+            - ./nginx/nginx.http.template:/etc/nginx/nginx.http.template
+            - ./nginx/nginx.https.template:/etc/nginx/nginx.https.template
+            - ./certbot/conf:/etc/letsencrypt
+            - ./certbot/www:/var/www/certbot
+            - ./start-nginx.sh:/start-nginx.sh
+        environment:
+            - APP_DOMAIN=${APP_DOMAIN}  # Load from .env
+        entrypoint: ["/bin/bash", "-c", "/start-nginx.sh"]
+
+
+    certbot:
+        image: certbot/certbot
+        container_name: certbot
+        depends_on:
+            - nginx
+        volumes:
+            - ./certbot/conf:/etc/letsencrypt
+            - ./certbot/www:/var/www/certbot
+        command: certonly --webroot -w /var/www/certbot --force-renewal --email ${EMAIL} -d ${APP_DOMAIN} --agree-tos # --dry-run

@@ -1,0 +1,10 @@
+# Ignore Certbot SSL certificates
+certbot/conf/
+certbot/www/
+
+# Ignore Nginx logs and actual configuration file
+/var/log/nginx/
+nginx/nginx.conf
+
+# Ignore environment files
+.env
