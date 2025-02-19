@@ -2,9 +2,17 @@
 
 1. Git clone the repository
 
+`git clone https://github.com/geoace/certbot-nginx.git`
+
+`cd certbot-nginx`
+
 2. make startup executable 
 
 `chmod +x start-nginx.sh`
+
+3. make the conf directory
+
+`mkdir conf`
 
 3. Copy the env file
 
