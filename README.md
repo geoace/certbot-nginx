@@ -1,5 +1,16 @@
 ## Setup
 
+Before getting started: Make sure that APACHE or on-VM NGINX aren't installed. Google cloud sometimes comes with apache installed by default.
+
+`sudo systemctl stop apache2`
+
+`sudo systemctl disable apache2`
+
+`sudo apt remove --purge apache2 -y` 
+
+`sudo apt autoremove -y`
+
+
 1. Git clone the repository
 
 `git clone https://github.com/geoace/certbot-nginx.git`
