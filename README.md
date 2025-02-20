@@ -23,7 +23,7 @@ Before getting started: Make sure that APACHE or on-VM NGINX aren't installed. G
 
 3. Make conf directories
 
-mk
+mkdir conf
 
 3. Copy the env file
 
