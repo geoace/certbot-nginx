@@ -23,14 +23,14 @@ Before getting started: Make sure that APACHE or on-VM NGINX aren't installed. G
 
 3. Make conf directories
 
-mkdir conf
+`mkdir conf`
 
-3. Copy the env file
+4. Copy the env file
 
 `cp .env.template .env`
 
-4. Modify the environment variables to suit your deployment
+5. Modify the environment variables to suit your deployment
 
 `nano .env`
 
-5. `docker compose up -d`
+6. `docker compose up -d`
