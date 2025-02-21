@@ -34,7 +34,7 @@ Before getting started: Make sure that APACHE or on-VM NGINX aren't installed. G
 
 `docker compose up -d`
 
-6. Visit the IP address of your virtual machine UNSECURED using HTTP and ensure your home page exists (e.g., http://niner.com)
+6. Visit the IP address of your virtual machine UNSECURED using HTTP and ensure your home page exists (e.g., http://123.456.7.89)
 
 7. Once you've verified that your site is up and running, then remove the containers
 
