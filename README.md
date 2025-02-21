@@ -36,12 +36,12 @@ Before getting started: Make sure that APACHE or on-VM NGINX aren't installed. G
 
 6. Visit the IP address of your virtual machine UNSECURED using HTTP and ensure your home page exists (e.g., http://123.456.7.89)
 
-7. Once you've verified that your site is up and running, then remove the containers
+7. Set up Domains between GCP and Registrar (Siteground is used in the video tutorial)
+ONCE DNS Zones and Nameservers are linked between GCP and Siteground/registrar, Run docker compose to get the certificates
+
+8. Once you've verified that your site is up and running at the unsecured (HTTP) domain (i.e., http://yourdomain.com), then remove the containers
 
 `docker rm $(docker ps -aq) -f`
-
-8. Set up Domains between GCP and Registrar (Siteground is used in the video tutorial)
-ONCE DNS Zones and Nameservers are linked between GCP and Siteground/registrar, Run docker compose to get the certificates
 
 `docker compose up`
 
