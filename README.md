@@ -21,10 +21,6 @@ Before getting started: Make sure that APACHE or on-VM NGINX aren't installed. G
 
 `chmod +x start-nginx.sh`
 
-3. Make conf directories
-
-`mkdir conf`
-
 4. Copy the env file
 
 `cp .env.template .env`
