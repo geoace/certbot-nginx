@@ -35,16 +35,17 @@ Before getting started: Make sure that APACHE or on-VM NGINX aren't installed. G
 6. Set up Domains between GCP and Registrar (Siteground is used in the video tutorial)
 ONCE DNS Zones and Nameservers are linked between GCP and Siteground/registrar, Run docker compose to get the certificates
 
-7. Once you've verified that your site is up and running at the unsecured (HTTP) domain (i.e., http://yourdomain.com), then remove the containers
+7. Once you've verified that your site is up and running at the unsecured (HTTP) domain (i.e., http://yourdomain.com), then remove the containers and recreate them to receive your certificates
 
 `docker rm $(docker ps -aq) -f`
 
 `docker compose up`
 
 8. Exit the containers using Control + C, and then remove them (certificates have been received, but NGINX is still not running via SSL due to configuration file contents; certificates WILL persist)
+
 `docker rm $(docker ps -aq) -f`
 
-9. Run the docker containers in the background
+10. Run the docker containers in the background for the "real world" setup
 `docker compose up -d`
 
-10. Navigate to https://yourdomain.com to verify that you're running using SSL/HTTPS!
+11. Navigate to https://yourdomain.com to verify that you're running using SSL/HTTPS!
