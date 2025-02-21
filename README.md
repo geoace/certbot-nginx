@@ -30,7 +30,25 @@ Before getting started: Make sure that APACHE or on-VM NGINX aren't installed. G
 `cp .env.template .env`
 
 5. Modify the environment variables to suit your deployment
-
 `nano .env`
 
-6. `docker compose up -d`
+`docker compose up -d`
+
+6. Visit the IP address of your virtual machine UNSECURED using HTTP and ensure your home page exists (e.g., http://niner.com)
+
+7. Once you've verified that your site is up and running, then remove the containers
+
+`docker rm $(docker ps -aq) -f`
+
+8. Set up Domains between GCP and Registrar (Siteground is used in the video tutorial)
+ONCE DNS Zones and Nameservers are linked between GCP and Siteground/registrar, Run docker compose to get the certificates
+
+`docker compose up`
+
+9. Exit the containers using Control + C, and then remove them (certificates have been received, but NGINX is still not running via SSL due to configuration file contents; certificates WILL persist)
+`docker rm $(docker ps -aq) -f`
+
+10. Run the docker containers in the background
+`docker compose up -d`
+
+11. Navigate to https://yourdomain.com to verify that you're running using SSL/HTTPS!
