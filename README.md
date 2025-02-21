@@ -46,6 +46,7 @@ ONCE DNS Zones and Nameservers are linked between GCP and Siteground/registrar, 
 `docker rm $(docker ps -aq) -f`
 
 10. Run the docker containers in the background for the "real world" setup
+
 `docker compose up -d`
 
-11. Navigate to https://yourdomain.com to verify that you're running using SSL/HTTPS!
+12. Navigate to https://yourdomain.com to verify that you're running using SSL/HTTPS!
